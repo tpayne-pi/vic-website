@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Value Investors Club at LSU</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* === RESET & BASE === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: #111827; background: #fff; line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+    svg { display: inline-block; vertical-align: middle; }
+
+    /* === LAYOUT === */
+    .container { max-width: 72rem; margin: 0 auto; padding: 0 1rem; }
+    @media (min-width: 640px) { .container { padding: 0 1.5rem; } }
+
+    /* === NAVIGATION === */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid #f3f4f6; z-index: 50;
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 4rem; }
+    .nav-logo { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-logo-icon {
+      width: 2.25rem; height: 2.25rem; border-radius: 0.5rem;
+      background: #461D7C; display: flex; align-items: center; justify-content: center;
+    }
+    .nav-logo-icon span { color: #FDD023; font-weight: 700; font-size: 0.875rem; }
+    .nav-logo-text { display: none; }
+    @media (min-width: 640px) { .nav-logo-text { display: block; } }
+    .nav-logo-title { font-weight: 700; color: #461D7C; font-size: 1.125rem; line-height: 1.2; display: block; }
+    .nav-logo-sub { font-size: 0.75rem; color: #6b7280; display: block; margin-top: -2px; }
+    .nav-links { display: none; align-items: center; gap: 2rem; }
+    @media (min-width: 768px) { .nav-links { display: flex; } }
+    .nav-link { color: #4b5563; font-weight: 500; font-size: 0.875rem; position: relative; transition: color 0.2s; }
+    .nav-link:hover, .nav-link-active { color: #461D7C; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 2px; background: #FDD023; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after, .nav-link-active::after { width: 100%; }
+    .btn-nav {
+      background: #461D7C; color: #fff; padding: 0.5rem 1.25rem;
+      border-radius: 0.5rem; font-size: 0.875rem; font-weight: 600;
+      transition: background 0.2s; display: inline-block;
+    }
+    .btn-nav:hover { background: #2d1250; }
+    .menu-toggle { display: none; }
+    .menu-btn {
+      display: flex; padding: 0.5rem; border-radius: 0.5rem;
+      border: none; background: transparent; cursor: pointer;
+    }
+    .menu-btn svg { width: 1.5rem; height: 1.5rem; color: #374151; }
+    @media (min-width: 768px) { .menu-btn { display: none; } }
+    .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .menu-toggle:checked ~ .mobile-menu { max-height: 500px; }
+    .mobile-menu-inner { padding: 0.75rem 0; border-top: 1px solid #f3f4f6; }
+    .mobile-link {
+      display: block; padding: 0.5rem 0.75rem; border-radius: 0.5rem;
+      font-weight: 500; font-size: 0.875rem; color: #4b5563; margin-bottom: 0.25rem;
+    }
+    .mobile-link:hover { background: #f9fafb; }
+    .mobile-link-active { background: rgba(70,29,124,0.05); color: #461D7C; }
+    .mobile-link-cta {
+      display: block; padding: 0.5rem 0.75rem; border-radius: 0.5rem;
+      background: #461D7C; color: #fff; font-weight: 500; font-size: 0.875rem;
+      text-align: center; margin-top: 0.5rem;
+    }
+
+    /* === PAGE HEADER === */
+    .page-header {
+      padding-top: 7rem; padding-bottom: 3rem;
+      background: #f9fafb; border-bottom: 1px solid #f3f4f6;
+    }
+    .page-header-label { color: #FDD023; font-weight: 600; font-size: 0.875rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .page-header h1 { font-size: 1.875rem; font-weight: 700; color: #111827; margin-top: 0.5rem; }
+    @media (min-width: 640px) { .page-header h1 { font-size: 2.25rem; } }
+    .page-header p { color: #6b7280; margin-top: 0.75rem; max-width: 36rem; }
+
+    /* === CONTACT CONTENT === */
+    .contact { padding: 4rem 0; }
+    .contact-grid { display: grid; gap: 2rem; max-width: 48rem; margin: 0 auto; }
+    @media (min-width: 768px) { .contact-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .contact-card {
+      background: #fff; border-radius: 1rem; border: 1px solid #f3f4f6; padding: 1.5rem;
+    }
+    .contact-icon {
+      width: 2.5rem; height: 2.5rem; background: rgba(70,29,124,0.1);
+      border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .contact-icon svg { width: 1.25rem; height: 1.25rem; color: #461D7C; }
+    .contact-card h3 { font-weight: 700; color: #111827; margin-bottom: 0.5rem; }
+    .contact-card p { color: #4b5563; font-size: 0.875rem; line-height: 1.7; margin-bottom: 0.75rem; }
+    .contact-link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      color: #461D7C; font-weight: 600; font-size: 0.875rem; transition: color 0.2s;
+    }
+    .contact-link:hover { color: #2d1250; }
+
+    /* === FAQ === */
+    .faq {
+      max-width: 48rem; margin: 0 auto; padding: 0 0 4rem;
+    }
+    .faq-box {
+      background: #f9fafb; border-radius: 1rem; border: 1px solid #f3f4f6; padding: 2rem;
+    }
+    .faq-box h3 { font-weight: 700; color: #111827; margin-bottom: 1.5rem; }
+    .faq-item { margin-bottom: 1.5rem; }
+    .faq-item:last-child { margin-bottom: 0; }
+    .faq-item h4 { font-weight: 600; color: #111827; font-size: 0.875rem; margin-bottom: 0.25rem; }
+    .faq-item p { color: #6b7280; font-size: 0.875rem; line-height: 1.7; }
+    .faq-item a { color: #461D7C; font-weight: 500; }
+    .faq-item a:hover { text-decoration: underline; }
+
+    /* === FOOTER === */
+    .footer { background: #111827; padding: 3rem 0; }
+    .footer-grid { display: grid; gap: 2rem; margin-bottom: 2.5rem; }
+    @media (min-width: 768px) { .footer-grid { grid-template-columns: repeat(3, 1fr); } }
+    .footer-brand { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+    .footer-brand-icon {
+      width: 2.25rem; height: 2.25rem; border-radius: 0.5rem;
+      background: #461D7C; display: flex; align-items: center; justify-content: center;
+    }
+    .footer-brand-icon span { color: #FDD023; font-weight: 700; font-size: 0.875rem; }
+    .footer-brand-name { font-weight: 700; color: #fff; font-size: 1.125rem; }
+    .footer-desc { color: #9ca3af; font-size: 0.875rem; line-height: 1.7; }
+    .footer-heading { font-weight: 600; color: #fff; margin-bottom: 1rem; font-size: 0.875rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-link { color: #9ca3af; font-size: 0.875rem; transition: color 0.2s; display: block; }
+    .footer-link:hover { color: #FDD023; }
+    .footer-bottom {
+      border-top: 1px solid #1f2937; padding-top: 2rem;
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: space-between; gap: 1rem;
+    }
+    @media (min-width: 640px) { .footer-bottom { flex-direction: row; } }
+    .footer-copy { color: #6b7280; font-size: 0.875rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+          <div class="nav-logo-icon"><span>VI</span></div>
+          <div class="nav-logo-text">
+            <span class="nav-logo-title">Value Investors</span>
+            <span class="nav-logo-sub">at Louisiana State University</span>
+          </div>
+        </a>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="leadership.html" class="nav-link">Leadership</a>
+          <a href="contact.html" class="nav-link nav-link-active">Contact</a>
+          <a href="https://tigerlink.lsu.edu/vic/home/" target="_blank" class="btn-nav">Join on TigerLink</a>
+        </div>
+        <label for="menu-toggle" class="menu-btn" aria-label="Open menu">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </label>
+      </div>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <div class="mobile-menu">
+        <div class="mobile-menu-inner">
+          <a href="index.html" class="mobile-link">Home</a>
+          <a href="leadership.html" class="mobile-link">Leadership</a>
+          <a href="contact.html" class="mobile-link mobile-link-active">Contact</a>
+          <a href="https://tigerlink.lsu.edu/vic/home/" target="_blank" class="mobile-link-cta">Join on TigerLink</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <span class="page-header-label">Get In Touch</span>
+      <h1>Contact Us</h1>
+      <p>Have questions about Value Investors Club? We'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <!-- Contact Content -->
+  <section class="contact">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Email Card -->
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3>Email Us</h3>
+          <p>Reach out with any questions about membership, events, or collaboration opportunities.</p>
+          <a href="mailto:viclsu@proton.me" class="contact-link">
+            viclsu@proton.me
+            <svg style="width:1rem;height:1rem" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- TigerLink Card -->
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+            </svg>
+          </div>
+          <h3>Official Page</h3>
+          <p>Join and manage your membership through TigerLink, LSU's student organization platform.</p>
+          <a href="https://tigerlink.lsu.edu/vic/home/" target="_blank" class="contact-link">
+            Visit TigerLink
+            <svg style="width:1rem;height:1rem" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="faq-box">
+      <h3>Frequently Asked Questions</h3>
+      <div class="faq-item">
+        <h4>How do I join?</h4>
+        <p>Visit our <a href="https://tigerlink.lsu.edu/vic/home/" target="_blank">TigerLink page</a> and click "Join." It's free and open to all LSU students.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Do I need investing experience?</h4>
+        <p>Not at all. We welcome everyone from complete beginners to experienced traders. Our meetings are designed to be educational at all levels.</p>
+      </div>
+      <div class="faq-item">
+        <h4>When and where do you meet?</h4>
+        <p>Meeting times and locations are posted on our TigerLink page and announced to members. Check TigerLink for the latest schedule.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Can I present a stock pitch?</h4>
+        <p>Yes! We encourage all members to present investment ideas. Reach out to our leadership team if you'd like to present at an upcoming meeting.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <div class="footer-brand-icon"><span>VI</span></div>
+            <span class="footer-brand-name">Value Investors</span>
+          </div>
+          <p class="footer-desc">
+            A CASA-registered student organization at Louisiana State University dedicated to value investing and financial literacy.
+          </p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="leadership.html" class="footer-link">Leadership</a>
+            <a href="contact.html" class="footer-link">Contact Us</a>
+          </div>
+        </div>
+        <div></div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Value Investors at Louisiana State University. All rights reserved.</p>
+        <a href="https://tigerlink.lsu.edu/vic/home/" target="_blank" class="footer-link">Visit us on TigerLink</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
