@@ -1,364 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leadership — Value Investors Club at LSU</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    /* === RESET & BASE === */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      color: #111827; background: #fff; line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { text-decoration: none; color: inherit; }
-    svg { display: inline-block; vertical-align: middle; }
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Leadership — Value Investors Club at LSU</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+ <style>
+ /* === RESET & BASE === */
+ *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ html { scroll-behavior: smooth; }
+ body {
+ font-family: 'Inter', system-ui, -apple-system, sans-serif;
+ color: #111827; background: #fff; line-height: 1.5;
+ -webkit-font-smoothing: antialiased;
+ }
+ a { text-decoration: none; color: inherit; }
+ svg { display: inline-block; vertical-align: middle; }
 
-    /* === LAYOUT === */
-    .container { max-width: 72rem; margin: 0 auto; padding: 0 1rem; }
-    @media (min-width: 640px) { .container { padding: 0 1.5rem; } }
+ /* === LAYOUT === */
+ .container { max-width: 72rem; margin: 0 auto; padding: 0 1rem; }
+ @media (min-width: 640px) { .container { padding: 0 1.5rem; } }
 
-    /* === NAVIGATION === */
-    .nav {
-      position: fixed; top: 0; left: 0; right: 0;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid #f3f4f6; z-index: 50;
-    }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 4rem; }
-    .nav-logo { display: flex; align-items: center; gap: 0.75rem; }
-    .nav-logo-icon {
-      width: 2.25rem; height: 2.25rem; border-radius: 0.5rem;
-      background: #461D7C; display: flex; align-items: center; justify-content: center;
-    }
-    .nav-logo-icon span { color: #FDD023; font-weight: 700; font-size: 0.875rem; }
-    .nav-logo-text { display: none; }
-    @media (min-width: 640px) { .nav-logo-text { display: block; } }
-    .nav-logo-title { font-weight: 700; color: #461D7C; font-size: 1.125rem; line-height: 1.2; display: block; }
-    .nav-logo-sub { font-size: 0.75rem; color: #6b7280; display: block; margin-top: -2px; }
-    .nav-links { display: none; align-items: center; gap: 2rem; }
-    @media (min-width: 768px) { .nav-links { display: flex; } }
-    .nav-link { color: #4b5563; font-weight: 500; font-size: 0.875rem; position: relative; transition: color 0.2s; }
-    .nav-link:hover, .nav-link-active { color: #461D7C; }
-    .nav-link::after {
-      content: ''; position: absolute; bottom: -2px; left: 0;
-      width: 0; height: 2px; background: #FDD023; transition: width 0.3s ease;
-    }
-    .nav-link:hover::after, .nav-link-active::after { width: 100%; }
-    .btn-nav {
-      background: #461D7C; color: #fff; padding: 0.5rem 1.25rem;
-      border-radius: 0.5rem; font-size: 0.875rem; font-weight: 600;
-      transition: background 0.2s; display: inline-block;
-    }
-    .btn-nav:hover { background: #2d1250; }
-    .menu-toggle { display: none; }
-    .menu-btn {
-      display: flex; padding: 0.5rem; border-radius: 0.5rem;
-      border: none; background: transparent; cursor: pointer;
-    }
-    .menu-btn svg { width: 1.5rem; height: 1.5rem; color: #374151; }
-    @media (min-width: 768px) { .menu-btn { display: none; } }
-    .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-    .menu-toggle:checked ~ .mobile-menu { max-height: 500px; }
-    .mobile-menu-inner { padding: 0.75rem 0; border-top: 1px solid #f3f4f6; }
-    .mobile-link {
-      display: block; padding: 0.5rem 0.75rem; border-radius: 0.5rem;
-      font-weight: 500; font-size: 0.875rem; color: #4b5563; margin-bottom: 0.25rem;
-    }
-    .mobile-link:hover { background: #f9fafb; }
-    .mobile-link-active { background: rgba(70,29,124,0.05); color: #461D7C; }
-    .mobile-link-cta {
-      display: block; padding: 0.5rem 0.75rem; border-radius: 0.5rem;
-      background: #461D7C; color: #fff; font-weight: 500; font-size: 0.875rem;
-      text-align: center; margin-top: 0.5rem;
-    }
+ /* === NAVIGATION === */
+ .nav {
+ position: fixed; top: 0; left: 0; right: 0;
+ background: rgba(255,255,255,0.95);
+ backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+ border-bottom: 1px solid #f3f4f6; z-index: 50;
+ }
+ .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 4rem; }
+ .nav-logo { display: flex; align-items: center; gap: 0.75rem; }
+ .nav-logo-icon {
+ width: 2.25rem; height: 2.25rem; border-radius: 0.5rem;
+ background: #461D7C; display: flex; align-items: center; justify-content: center;
+ }
+ .nav-logo-icon span { color: #FDD023; font-weight: 700; font-size: 0.875rem; }
+ .nav-logo-text { display: none; }
+ @media (min-width: 640px) { .nav-logo-text { display: block; } }
+ .nav-logo-title { font-weight: 700; color: #461D7C; font-size: 1.125rem; line-height: 1.2; display: block; }
+ .nav-logo-sub { font-size: 0.75rem; color: #6b7280; display: block; margin-top: -2px; }
+ .nav-links { display: none; align-items: center; gap: 2rem; }
+ @media (min-width: 768px) { .nav-links { display: flex; } }
+ .nav-link { color: #4b5563; font-weight: 500; font-size: 0.875rem; position: relative; transition: color 0.2s; }
+ .nav-link:hover, .nav-link-active { color: #461D7C; }
+ .nav-link::after {
+ content: ''; position: absolute; bottom: -2px; left: 0;
+ width: 0; height: 2px; background: #FDD023; transition: width 0.3s ease;
+ }
+ .nav-link:hover::after, .nav-link-active::after { width: 100%; }
+ .btn-nav {
+ background: #461D7C; color: #fff; padding: 0.5rem 1.25rem;
+ border-radius: 0.5rem; font-size: 0.875rem; font-weight: 600;
+ transition: background 0.2s; display: inline-block;
+ }
+ .btn-nav:hover { background: #2d1250; }
+ .menu-toggle { display: none; }
+ .menu-btn {
+ display: flex; padding: 0.5rem; border-radius: 0.5rem;
+ border: none; background: transparent; cursor: pointer;
+ }
+ .menu-btn svg { width: 1.5rem; height: 1.5rem; color: #374151; }
+ @media (min-width: 768px) { .menu-btn { display: none; } }
+ .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+ .menu-toggle:checked ~ .mobile-menu { max-height: 500px; }
+ .mobile-menu-inner { padding: 0.75rem 0; border-top: 1px solid #f3f4f6; }
+ .mobile-link {
+ display: block; padding: 0.5rem 0.75rem; border-radius: 0.5rem;
+ font-weight: 500; font-size: 0.875rem; color: #4b5563; margin-bottom: 0.25rem;
+ }
+ .mobile-link:hover { background: #f9fafb; }
+ .mobile-link-active { background: rgba(70,29,124,0.05); color: #461D7C; }
+ .mobile-link-cta {
+ display: block; padding: 0.5rem 0.75rem; border-radius: 0.5rem;
+ background: #461D7C; color: #fff; font-weight: 500; font-size: 0.875rem;
+ text-align: center; margin-top: 0.5rem;
+ }
 
-    /* === PAGE HEADER === */
-    .page-header {
-      padding-top: 7rem; padding-bottom: 3rem;
-      background: #f9fafb; border-bottom: 1px solid #f3f4f6;
-    }
-    .page-header-label { color: #FDD023; font-weight: 600; font-size: 0.875rem; letter-spacing: 0.05em; text-transform: uppercase; }
-    .page-header h1 { font-size: 1.875rem; font-weight: 700; color: #111827; margin-top: 0.5rem; }
-    @media (min-width: 640px) { .page-header h1 { font-size: 2.25rem; } }
-    .page-header p { color: #6b7280; margin-top: 0.75rem; max-width: 36rem; }
+ /* === PAGE HEADER === */
+ .page-header {
+ padding-top: 7rem; padding-bottom: 3rem;
+ background: #f9fafb; border-bottom: 1px solid #f3f4f6;
+ }
+ .page-header-label { color: #FDD023; font-weight: 600; font-size: 0.875rem; letter-spacing: 0.05em; text-transform: uppercase; }
+ .page-header h1 { font-size: 1.875rem; font-weight: 700; color: #111827; margin-top: 0.5rem; }
+ @media (min-width: 640px) { .page-header h1 { font-size: 2.25rem; } }
+ .page-header p { color: #6b7280; margin-top: 0.75rem; max-width: 36rem; }
 
-    /* === LEADERSHIP === */
-    .leadership { padding: 4rem 0; }
+ /* === LEADERSHIP === */
+ .leadership { padding: 4rem 0; }
 
-    /* President card */
-    .president-card {
-      max-width: 48rem; margin: 0 auto 4rem;
-      background: #fff; border-radius: 1rem; border: 1px solid #f3f4f6;
-      overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .president-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(70,29,124,0.15); }
-    @media (min-width: 768px) { .president-card-inner { display: flex; } }
-    .president-photo {
-      height: 18rem; background: linear-gradient(135deg, #461D7C, #2d1250);
-      display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden; flex-shrink: 0;
-    }
-    @media (min-width: 768px) { .president-photo { width: 18rem; height: auto; } }
-    .president-photo-pattern {
-      position: absolute; inset: 0; opacity: 0.1;
-      background-image: url('data:image/svg+xml,%3Csvg width="40" height="40" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 0h40v40H0z" fill="none" stroke="%23FDD023" stroke-width="0.3"/%3E%3C/svg%3E');
-    }
-    .president-avatar {
-      width: 8rem; height: 8rem; border-radius: 50%;
-      background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center;
-      border: 2px solid rgba(253,208,35,0.3); position: relative; z-index: 1;
-    }
-    .president-avatar span { font-size: 2.25rem; font-weight: 700; color: #FDD023; }
-    .president-info { padding: 2rem; display: flex; flex-direction: column; justify-content: center; }
-    .badge {
-      display: inline-block; font-size: 0.75rem; font-weight: 600;
-      padding: 0.25rem 0.75rem; border-radius: 9999px; margin-bottom: 0.75rem;
-    }
-    .badge-gold { color: #FDD023; background: rgba(253,208,35,0.1); }
-    .badge-purple { color: #461D7C; background: rgba(70,29,124,0.05); }
-    .president-info h2 { font-size: 1.5rem; font-weight: 700; color: #111827; margin-bottom: 0.5rem; }
-    .president-info p { color: #4b5563; line-height: 1.7; }
-    .link-arrow {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      color: #461D7C; font-weight: 600; font-size: 0.875rem;
-      margin-top: 1rem; transition: color 0.2s;
-    }
-    .link-arrow:hover { color: #2d1250; }
+ .president-card {
+ max-width: 48rem; margin: 0 auto 4rem;
+ background: #fff; border-radius: 1rem; border: 1px solid #f3f4f6;
+ overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;
+ }
+ .president-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(70,29,124,0.15); }
+ @media (min-width: 768px) { .president-card-inner { display: flex; } }
+ .president-photo {
+ height: 18rem; background: linear-gradient(135deg, #461D7C, #2d1250);
+ display: flex; align-items: center; justify-content: center;
+ position: relative; overflow: hidden; flex-shrink: 0;
+ }
+ @media (min-width: 768px) { .president-photo { width: 18rem; height: auto; } }
+ .president-photo-pattern {
+ position: absolute; inset: 0; opacity: 0.1;
+ background-image: url('data:image/svg+xml,%3Csvg width="40" height="40" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 0h40v40H0z" fill="none" stroke="%23FDD023" stroke-width="0.3"/%3E%3C/svg%3E');
+ }
+ .president-avatar {
+ width: 8rem; height: 8rem; border-radius: 50%;
+ background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center;
+ border: 2px solid rgba(253,208,35,0.3); position: relative; z-index: 1;
+ }
+ .president-avatar span { font-size: 2.25rem; font-weight: 700; color: #FDD023; }
+ .president-info { padding: 2rem; display: flex; flex-direction: column; justify-content: center; }
+ .badge {
+ display: inline-block; font-size: 0.75rem; font-weight: 600;
+ padding: 0.25rem 0.75rem; border-radius: 9999px; margin-bottom: 0.75rem;
+ }
+ .badge-gold { color: #FDD023; background: rgba(253,208,35,0.1); }
+ .badge-purple { color: #461D7C; background: rgba(70,29,124,0.05); }
+ .president-info h2 { font-size: 1.5rem; font-weight: 700; color: #111827; margin-bottom: 0.5rem; }
+ .president-info p { color: #4b5563; line-height: 1.7; }
+ .link-arrow {
+ display: inline-flex; align-items: center; gap: 0.5rem;
+ color: #461D7C; font-weight: 600; font-size: 0.875rem;
+ margin-top: 1rem; transition: color 0.2s;
+ }
+ .link-arrow:hover { color: #2d1250; }
 
-    /* Officer grid */
-    .officers-grid { display: grid; gap: 2rem; }
-    @media (min-width: 768px) { .officers-grid { grid-template-columns: repeat(3, 1fr); } }
-    .officer-card {
-      background: #fff; border-radius: 1rem; border: 1px solid #f3f4f6;
-      overflow: hidden; text-align: center; transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .officer-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(70,29,124,0.15); }
-    .officer-photo {
-      height: 12rem; background: linear-gradient(135deg, rgba(70,29,124,0.8), #2d1250);
-      display: flex; align-items: center; justify-content: center;
-    }
-    .officer-avatar {
-      width: 6rem; height: 6rem; border-radius: 50%;
-      background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center;
-      border: 2px solid rgba(255,255,255,0.2);
-    }
-    .officer-avatar span { font-size: 1.5rem; font-weight: 700; color: rgba(255,255,255,0.8); }
-    .officer-info { padding: 1.5rem; }
-    .officer-info h3 { font-size: 1.25rem; font-weight: 700; color: #111827; margin-top: 0.75rem; margin-bottom: 0.5rem; }
-    .officer-info p { color: #6b7280; font-size: 0.875rem; line-height: 1.7; }
+ .officers-grid { display: grid; gap: 2rem; }
+ @media (min-width: 768px) { .officers-grid { grid-template-columns: repeat(3, 1fr); } }
+ .officer-card {
+ background: #fff; border-radius: 1rem; border: 1px solid #f3f4f6;
+ overflow: hidden; text-align: center; transition: transform 0.3s, box-shadow 0.3s;
+ }
+ .officer-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(70,29,124,0.15); }
+ .officer-photo {
+ height: 12rem; background: linear-gradient(135deg, rgba(70,29,124,0.8), #2d1250);
+ display: flex; align-items: center; justify-content: center;
+ }
+ .officer-avatar {
+ width: 6rem; height: 6rem; border-radius: 50%;
+ background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center;
+ border: 2px solid rgba(255,255,255,0.2);
+ }
+ .officer-avatar span { font-size: 1.5rem; font-weight: 700; color: rgba(255,255,255,0.8); }
+ .officer-info { padding: 1.5rem; }
+ .officer-info h3 { font-size: 1.25rem; font-weight: 700; color: #111827; margin-top: 0.75rem; margin-bottom: 0.5rem; }
+ .officer-info p { color: #6b7280; font-size: 0.875rem; line-height: 1.7; }
 
-    /* Join CTA */
-    .join-cta {
-      margin-top: 4rem; text-align: center;
-      background: #f9fafb; border-radius: 1rem; padding: 2.5rem;
-      border: 1px solid #f3f4f6;
-    }
-    .join-cta h3 { font-size: 1.5rem; font-weight: 700; color: #111827; margin-bottom: 0.75rem; }
-    .join-cta p { color: #6b7280; max-width: 32rem; margin: 0 auto 1.5rem; }
-    .btn-purple {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: #461D7C; color: #fff; padding: 0.75rem 2rem;
-      border-radius: 0.75rem; font-weight: 600; transition: background 0.2s;
-    }
-    .btn-purple:hover { background: #2d1250; }
+ .join-cta {
+ margin-top: 4rem; text-align: center;
+ background: #f9fafb; border-radius: 1rem; padding: 2.5rem;
+ border: 1px solid #f3f4f6;
+ }
+ .join-cta h3 { font-size: 1.5rem; font-weight: 700; color: #111827; margin-bottom: 0.75rem; }
+ .join-cta p { color: #6b7280; max-width: 32rem; margin: 0 auto 1.5rem; }
+ .btn-purple {
+ display: inline-flex; align-items: center; gap: 0.5rem;
+ background: #461D7C; color: #fff; padding: 0.75rem 2rem;
+ border-radius: 0.75rem; font-weight: 600; transition: background 0.2s;
+ }
+ .btn-purple:hover { background: #2d1250; }
 
-    /* === FOOTER === */
-    .footer { background: #111827; padding: 3rem 0; }
-    .footer-grid { display: grid; gap: 2rem; margin-bottom: 2.5rem; }
-    @media (min-width: 768px) { .footer-grid { grid-template-columns: repeat(3, 1fr); } }
-    .footer-brand { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
-    .footer-brand-icon {
-      width: 2.25rem; height: 2.25rem; border-radius: 0.5rem;
-      background: #461D7C; display: flex; align-items: center; justify-content: center;
-    }
-    .footer-brand-icon span { color: #FDD023; font-weight: 700; font-size: 0.875rem; }
-    .footer-brand-name { font-weight: 700; color: #fff; font-size: 1.125rem; }
-    .footer-desc { color: #9ca3af; font-size: 0.875rem; line-height: 1.7; }
-    .footer-heading { font-weight: 600; color: #fff; margin-bottom: 1rem; font-size: 0.875rem; letter-spacing: 0.05em; text-transform: uppercase; }
-    .footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
-    .footer-link { color: #9ca3af; font-size: 0.875rem; transition: color 0.2s; display: block; }
-    .footer-link:hover { color: #FDD023; }
-    .footer-bottom {
-      border-top: 1px solid #1f2937; padding-top: 2rem;
-      display: flex; flex-direction: column; align-items: center;
-      justify-content: space-between; gap: 1rem;
-    }
-    @media (min-width: 640px) { .footer-bottom { flex-direction: row; } }
-    .footer-copy { color: #6b7280; font-size: 0.875rem; }
-  </style>
+ /* === FOOTER === */
+ .footer { background: #111827; padding: 3rem 0; }
+ .footer-grid { display: grid; gap: 2rem; margin-bottom: 2.5rem; }
+ @media (min-width: 768px) { .footer-grid { grid-template-columns: repeat(3, 1fr); } }
+ .footer-brand { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+ .footer-brand-icon {
+ width: 2.25rem; height: 2.25rem; border-radius: 0.5rem;
+ background: #461D7C; display: flex; align-items: center; justify-content: center;
+ }
+ .footer-brand-icon span { color: #FDD023; font-weight: 700; font-size: 0.875rem; }
+ .footer-brand-name { font-weight: 700; color: #fff; font-size: 1.125rem; }
+ .footer-desc { color: #9ca3af; font-size: 0.875rem; line-height: 1.7; }
+ .footer-heading { font-weight: 600; color: #fff; margin-bottom: 1rem; font-size: 0.875rem; letter-spacing: 0.05em; text-transform: uppercase; }
+ .footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
+ .footer-link { color: #9ca3af; font-size: 0.875rem; transition: color 0.2s; display: block; }
+ .footer-link:hover { color: #FDD023; }
+ .footer-bottom {
+ border-top: 1px solid #1f2937; padding-top: 2rem;
+ display: flex; flex-direction: column; align-items: center;
+ justify-content: space-between; gap: 1rem;
+ }
+ @media (min-width: 640px) { .footer-bottom { flex-direction: row; } }
+ .footer-copy { color: #6b7280; font-size: 0.875rem; }
+ </style>
 </head>
 <body>
+ <nav class="nav">
+ <div class="container">
+ <div class="nav-inner">
+ <a href="index.html" class="nav-logo">
+ <div class="nav-logo-icon"><span>VI</span></div>
+ <div class="nav-logo-text">
+ <span class="nav-logo-title">Value Investors</span>
+ <span class="nav-logo-sub">at Louisiana State University</span>
+ </div>
+ </a>
+ <div class="nav-links">
+ <a href="index.html" class="nav-link">Home</a>
+ <a href="leadership.html" class="nav-link nav-link-active">Leadership</a>
+ <a href="contact.html" class="nav-link">Contact</a>
+ <a href="https://tigerlink.lsu.edu/vic/home/" target="_blank" class="btn-nav">Join on TigerLink</a>
+ </div>
+ <label for="menu-toggle" class="menu-btn" aria-label="Open menu">
+ <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+ </svg>
+ </label>
+ </div>
+ <input type="checkbox" id="menu-toggle" class="menu-toggle">
+ <div class="mobile-menu">
+ <div class="mobile-menu-inner">
+ <a href="index.html" class="mobile-link">Home</a>
+ <a href="leadership.html" class="mobile-link mobile-link-active">Leadership</a>
+ <a href="contact.html" class="mobile-link">Contact</a>
+ <a href="https://tigerlink.lsu.edu/vic/home/" target="_blank" class="mobile-link-cta">Join on TigerLink</a>
+ </div>
+ </div>
+ </div>
+ </nav>
 
-  <!-- Navigation -->
-  <nav class="nav">
-    <div class="container">
-      <div class="nav-inner">
-        <a href="index.html" class="nav-logo">
-          <div class="nav-logo-icon"><span>VI</span></div>
-          <div class="nav-logo-text">
-            <span class="nav-logo-title">Value Investors</span>
-            <span class="nav-logo-sub">at Louisiana State University</span>
-          </div>
-        </a>
-        <div class="nav-links">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="leadership.html" class="nav-link nav-link-active">Leadership</a>
-          <a href="contact.html" class="nav-link">Contact</a>
-          <a href="https://tigerlink.lsu.edu/vic/home/" target="_blank" class="btn-nav">Join on TigerLink</a>
-        </div>
-        <label for="menu-toggle" class="menu-btn" aria-label="Open menu">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </label>
-      </div>
-      <input type="checkbox" id="menu-toggle" class="menu-toggle">
-      <div class="mobile-menu">
-        <div class="mobile-menu-inner">
-          <a href="index.html" class="mobile-link">Home</a>
-          <a href="leadership.html" class="mobile-link mobile-link-active">Leadership</a>
-          <a href="contact.html" class="mobile-link">Contact</a>
-          <a href="https://tigerlink.lsu.edu/vic/home/" target="_blank" class="mobile-link-cta">Join on TigerLink</a>
-        </div>
-      </div>
-    </div>
-  </nav>
+ <section class="page-header">
+ <div class="container">
+ <span class="page-header-label">Our Team</span>
+ <h1>Leadership Team</h1>
+ <p>Meet the officers driving Value Investors Club forward. Our leadership team is committed to creating the best experience for every member.</p>
+ </div>
+ </section>
 
-  <!-- Page Header -->
-  <section class="page-header">
-    <div class="container">
-      <span class="page-header-label">Our Team</span>
-      <h1>Leadership Team</h1>
-      <p>Meet the officers driving Value Investors Club forward. Our leadership team is committed to creating the best experience for every member.</p>
-    </div>
-  </section>
+ <section class="leadership">
+ <div class="container">
+ <div class="president-card">
+ <div class="president-card-inner">
+ <div class="president-photo">
+ <div class="president-photo-pattern"></div>
+ <div class="president-avatar"><span>TP</span></div>
+ </div>
+ <div class="president-info">
+ <span class="badge badge-gold">President</span>
+ <h2>Thomas Payne</h2>
+ <p>As President, Thomas leads VIC's strategic direction, manages officer meetings, and represents the club across LSU. He's passionate about fundamental analysis and building a community where students can develop real investing skills.</p>
+ <a href="contact.html" class="link-arrow">Get in touch <svg style="width:1rem;height:1rem" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+ </div>
+ </div>
+ </div>
+ <div class="officers-grid">
+ <div class="officer-card">
+ <div class="officer-photo"><div class="officer-avatar"><span>AB</span></div></div>
+ <div class="officer-info">
+ <span class="badge badge-purple">Vice-President</span>
+ <h3>Alex Braud</h3>
+ <p>Supports the President in club operations, coordinates event planning, and helps drive member engagement and recruitment efforts.</p>
+ </div>
+ </div>
+ <div class="officer-card">
+ <div class="officer-photo"><div class="officer-avatar"><span>CG</span></div></div>
+ <div class="officer-info">
+ <span class="badge badge-purple">Officer</span>
+ <h3>Charles Giordano</h3>
+ <p>Assists with club programming, helps organize weekly meetings, and contributes to the educational content and speaker series.</p>
+ </div>
+ </div>
+ <div class="officer-card">
+ <div class="officer-photo"><div class="officer-avatar"><span>TR</span></div></div>
+ <div class="officer-info">
+ <span class="badge badge-purple">Campus Advisor</span>
+ <h3>Timothy Rakitan</h3>
+ <p>Serves as the faculty/staff advisor, providing guidance on club operations, university compliance, and connecting students with professional resources.</p>
+ </div>
+ </div>
+ </div>
+ <div class="join-cta">
+ <h3>Want to get involved?</h3>
+ <p>We're always looking for passionate students to take on leadership roles. Join VIC and make an impact on our growing community.</p>
+ <a href="https://tigerlink.lsu.edu/vic/home/" target="_blank" class="btn-purple">Join on TigerLink <svg style="width:1.25rem;height:1.25rem" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+ </div>
+ </div>
+ </section>
 
-  <!-- Leadership Grid -->
-  <section class="leadership">
-    <div class="container">
-
-      <!-- President -->
-      <div class="president-card">
-        <div class="president-card-inner">
-          <div class="president-photo">
-            <div class="president-photo-pattern"></div>
-            <div class="president-avatar"><span>TP</span></div>
-          </div>
-          <div class="president-info">
-            <span class="badge badge-gold">President</span>
-            <h2>Thomas Payne</h2>
-            <p>
-              As President, Thomas leads VIC's strategic direction, manages officer meetings, and represents the
-              club across LSU. He's passionate about fundamental analysis and building a community where students
-              can develop real investing skills.
-            </p>
-            <a href="contact.html" class="link-arrow">
-              Get in touch
-              <svg style="width:1rem;height:1rem" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Other Officers -->
-      <div class="officers-grid">
-
-        <!-- Vice-President -->
-        <div class="officer-card">
-          <div class="officer-photo">
-            <div class="officer-avatar"><span>AB</span></div>
-          </div>
-          <div class="officer-info">
-            <span class="badge badge-purple">Vice-President</span>
-            <h3>Alex Braud</h3>
-            <p>
-              Supports the President in club operations, coordinates event planning, and helps drive member engagement
-              and recruitment efforts.
-            </p>
-          </div>
-        </div>
-
-        <!-- Officer -->
-        <div class="officer-card">
-          <div class="officer-photo">
-            <div class="officer-avatar"><span>CG</span></div>
-          </div>
-          <div class="officer-info">
-            <span class="badge badge-purple">Officer</span>
-            <h3>Charles Giordano</h3>
-            <p>
-              Assists with club programming, helps organize weekly meetings, and contributes to the educational
-              content and speaker series.
-            </p>
-          </div>
-        </div>
-
-        <!-- Campus Advisor -->
-        <div class="officer-card">
-          <div class="officer-photo">
-            <div class="officer-avatar"><span>TR</span></div>
-          </div>
-          <div class="officer-info">
-            <span class="badge badge-purple">Campus Advisor</span>
-            <h3>Timothy Rakitan</h3>
-            <p>
-              Serves as the faculty/staff advisor, providing guidance on club operations, university compliance,
-              and connecting students with professional resources.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Join CTA -->
-      <div class="join-cta">
-        <h3>Want to get involved?</h3>
-        <p>We're always looking for passionate students to take on leadership roles. Join VIC and make an impact on our growing community.</p>
-        <a href="https://tigerlink.lsu.edu/vic/home/" target="_blank" class="btn-purple">
-          Join on TigerLink
-          <svg style="width:1.25rem;height:1.25rem" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-brand">
-            <div class="footer-brand-icon"><span>VI</span></div>
-            <span class="footer-brand-name">Value Investors</span>
-          </div>
-          <p class="footer-desc">
-            A CASA-registered student organization at Louisiana State University dedicated to value investing and financial literacy.
-          </p>
-        </div>
-        <div>
-          <h4 class="footer-heading">Quick Links</h4>
-          <div class="footer-links">
-            <a href="index.html" class="footer-link">Home</a>
-            <a href="leadership.html" class="footer-link">Leadership</a>
-            <a href="contact.html" class="footer-link">Contact Us</a>
-          </div>
-        </div>
-        <div></div>
-      </div>
-      <div class="footer-bottom">
-        <p class="footer-copy">&copy; 2026 Value Investors at Louisiana State University. All rights reserved.</p>
-        <a href="https://tigerlink.lsu.edu/vic/home/" target="_blank" class="footer-link">Visit us on TigerLink</a>
-      </div>
-    </div>
-  </footer>
-
+ <footer class="footer">
+ <div class="container">
+ <div class="footer-grid">
+ <div>
+ <div class="footer-brand"><div class="footer-brand-icon"><span>VI</span></div><span class="footer-brand-name">Value Investors</span></div>
+ <p class="footer-desc">A CASA-registered student organization at Louisiana State University dedicated to value investing and financial literacy.</p>
+ </div>
+ <div>
+ <h4 class="footer-heading">Quick Links</h4>
+ <div class="footer-links">
+ <a href="index.html" class="footer-link">Home</a>
+ <a href="leadership.html" class="footer-link">Leadership</a>
+ <a href="contact.html" class="footer-link">Contact Us</a>
+ </div>
+ </div>
+ <div></div>
+ </div>
+ <div class="footer-bottom">
+ <p class="footer-copy">&copy; 2026 Value Investors at Louisiana State University. All rights reserved.</p>
+ <a href="https://tigerlink.lsu.edu/vic/home/" target="_blank" class="footer-link">Visit us on TigerLink</a>
+ </div>
+ </div>
+ </footer>
 </body>
 </html>
